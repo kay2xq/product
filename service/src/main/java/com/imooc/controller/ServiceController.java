@@ -27,6 +27,11 @@ public class ServiceController {
 
     @PostMapping("/findByProductIdIn")
     public List<ProductInfo> findByProductIdIn(@RequestBody List<String> productIds){
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         List<ProductInfo> products = productService.findByProductIdIn(productIds);
         return products;
     }

@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  * Created by XuQin on 2018/7/3.
  */
 @RestController
-@RequestMapping("product")
+@RequestMapping("/product")
 public class ProductController {
     @Autowired
     private ProductService productService;

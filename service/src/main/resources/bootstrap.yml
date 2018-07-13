@@ -7,6 +7,21 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
+  rabbitmq:
+      host: 192.168.1.109
+      port: 5672
+      username: kay
+      password: 123456
+# zipkin监控中心配置
+  zipkin:
+    base-url: http://192.168.1.109:9411/
+# 如果项目里引用了RabbitMQ依赖，会把数据发送到mq， 不会通过http方式发到zipkin服务端了（RABBIT, KAFKA, WEB;） 解决方案配置成web
+    sender:
+      type: web
+# 展现监控数据抽样百分比
+  sleuth:
+    sampler:
+      probability: 1
 eureka:
   client:
     service-url:
